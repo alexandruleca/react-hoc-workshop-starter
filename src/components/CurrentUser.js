@@ -32,7 +32,7 @@ const UserList = () => {
     }
 
     return (
-        <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+        <div className="table-wrapper" style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', paddingBottom: 30, paddingTop: 30}}>
             <img style={{maxWidth: 128}} src={data.avatar} alt={data.email}/>
             <span>{data.first_name} {data.last_name}</span>
             <span>{data.email}</span>

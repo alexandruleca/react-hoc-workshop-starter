@@ -62,33 +62,35 @@ const UserList = () => {
     }
 
     return (
-        <table>
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Email</th>
-                    <th>First name</th>
-                    <th>Last name</th>
-                    <th>Avatar</th>
-                </tr>
-            </thead>
-            <tbody>
-            {list.data.map((user, i) => {
-                return (
-                    <UserListItem key={i} user={user}/>
-                );
-            })}
-            </tbody>
-            {pagination.enabled ? (
-                <tfoot>
+        <div className="table-wrapper">
+            <table className="fl-table">
+                <thead>
                     <tr>
-                        <td><a onClick={() => { setCurrentPage(currentPage - 1) }}>&lt;</a></td>
-                        <td>{pagination.page}</td>
-                        <td><a onClick={() => { setCurrentPage(currentPage + 1) }}>&gt;</a></td>
+                        <th>Id</th>
+                        <th>Email</th>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Avatar</th>
                     </tr>
-                </tfoot>
-            ) : null}
-        </table>
+                </thead>
+                <tbody>
+                {list.data.map((user, i) => {
+                    return (
+                        <UserListItem key={i} user={user}/>
+                    );
+                })}
+                </tbody>
+                {pagination.enabled ? (
+                    <tfoot>
+                        <tr>
+                            <td><a onClick={() => { setCurrentPage(currentPage - 1) }}>&lt;</a></td>
+                            <td>{pagination.page}</td>
+                            <td><a onClick={() => { setCurrentPage(currentPage + 1) }}>&gt;</a></td>
+                        </tr>
+                    </tfoot>
+                ) : null}
+            </table>
+        </div>
     );
 }
 
